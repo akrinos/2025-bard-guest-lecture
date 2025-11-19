@@ -1,0 +1,99 @@
+---
+title: "Ocean Data and Mapping"
+format: revealjs
+editor: visual
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = "/Users/akq/Brown Dropbox/Arianna Krinos Quinn/2025/2025-2026 applications/2025-bard/2025-bard-guest-lecture")
+```
+
+## Ocean Spatial Datasets and Mapping Tools in R
+
+For the icebreaker in class today, you looked at a map of oceanographic data that we might want to use to calculate summary statistics and compare regions of interest. You have drawn your decision for the regions of interests on your maps, but it's important to note that these data are complex because they vary in both space and time. For now, let's focus on space.
+
+If you want to code along, you can download the data from \<here\>. The first thing we will do is read our dataset into R. To code along, you'll want to make sure that you have `ggplot2` loaded for making some visualizations.
+
+```{r}
+library(ggplot2) 
+```
+
+## Reading in and Inspecting our Dataset
+
+```{r}
+
+
+```
+
+Let's visualize variables over *time* and *space*. For our very short class today, we are going to look at **temperature**, though we will also use temperature to calculate **water density**.
+
+```{r}
+
+```
+
+We first generated a plot of *space* and how our water temperature at the surface varies. Now, let's generate a plot of *time*, since each of these points was collected during a distinct time period over the course of a continuous expedition.
+
+```{r}
+
+```
+
+This dataset is from the North Atlantic Ocean. They were collected using the *underway system* that collects continuous data.
+
+![](images/IMG_7365.jpg){fig-align="center" width="209"}
+
+## The `apply` function
+
+Using the `apply` function, we can perform the same calculation many times over some axis of a vector or a `DataFrame`. Multiple versions of `apply` exist. Today, we will use "simplified apply", or `sapply`–this function tries to return the **simplest data structure possible**. Today, we will give the function a vector and expect to get a vector back.
+
+## Min-Max Normalization
+
+Some values are easier to visualize than others. One transformation we may wish to apply to our data is **Min-Max Normalization**, which will help us to see how each datapoint compares to the spread across the data. The formula for Min-Max Normalization is:
+
+$$
+\textrm{Normalized Value} = \frac{\textrm{Value}-\min(\textrm{Values})}{\max(\textrm{Values})-\min(\textrm{Values})}
+$$
+
+*Quick Question*: What does it look like this formula is doing?
+
+### Let's try it out!
+
+```{r}
+
+```
+
+*Quick question*: What do you notice about the values we get from the Min-Max equation?
+
+Let's add the Min-Max normalization values back to our original `DataFrame`:
+
+```{r}
+
+```
+
+Now, we can plot the Min-Max values across latitude and longitude:
+
+```{r}
+
+```
+
+*Quick question*: Are the Min-Max values any easier to read than our original `DataFrame`?
+
+## Using the `ifelse` function
+
+We can succinctly apply a condition in R using `ifelse` as a function with our mapping function (`sapply`).
+
+```{r}
+
+```
+
+## Using the `aggregate` function
+
+```{r}
+
+```
+
+## Time to set up your regions!
+
+Let's take your inferences from the beginning of class and use them to set up regions which we can then aggregate within.
+
+## Bonus: Density calculation
