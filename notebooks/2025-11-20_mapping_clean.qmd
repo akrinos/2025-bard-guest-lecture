@@ -13,7 +13,9 @@ knitr::opts_knit$set(root.dir = "/Users/akq/Brown Dropbox/Arianna Krinos Quinn/2
 
 For the icebreaker in class today, you looked at a map of oceanographic data that we might want to use to calculate summary statistics and compare regions of interest. You have drawn your decision for the regions of interests on your maps, but it's important to note that these data are complex because they vary in both space and time. For now, let's focus on space.
 
-If you want to code along, you can download the data from \<here\>. The first thing we will do is read our dataset into R. To code along, you'll want to make sure that you have `ggplot2` loaded for making some visualizations.
+If you want to code along, you can download the data from <https://github.com/akrinos/2025-bard-guest-lecture>. The first thing we will do is read our dataset into R. To code along, you'll want to make sure that you have `ggplot2` loaded for making some visualizations.
+
+![](images/qr_github.jpg)
 
 ```{r}
 library(ggplot2) 
