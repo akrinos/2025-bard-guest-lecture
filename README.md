@@ -1,5 +1,5 @@
 ## November 20, 2025
-## Introduction to Data Analytics & R Programming
+### Introduction to Data Analytics & R Programming
 
 If you're new to GitHub, use this repository to download the dataset by navigating to the `data` folder and clicking `combined_data.csv` and then downloading the raw file. 
 
