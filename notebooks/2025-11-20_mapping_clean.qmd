@@ -97,5 +97,3 @@ We can succinctly apply a condition in R using `ifelse` as a function with our m
 ## Time to set up your regions!
 
 Let's take your inferences from the beginning of class and use them to set up regions which we can then aggregate within.
-
-## Bonus: Density calculation
